@@ -1,0 +1,19 @@
+  154  ansible all --key-file ~/.ssh/id_ed25519 -i ~/ansible/inventory  -m ping
+  157  ansible all --key-file ~/.ssh/id_ed25519 -i ~/ansible/inventory  -m ping
+  178  ansible all --key-file ~/.ssh/id_ed25519 -i ~/ansible/inventory  -m ping
+  180  ansible all --key-file ~/.ssh/id_ed25519 -i ~/ansible/inventory  -m ping
+  183  ansible all --key-file -m ping ansible.cfg 
+  184  ansible all -m ping ansible.cfg 
+  185  ansible all -m ping
+  187  ansible all -m ping
+  198  ansible all --lists-hosts
+  201  ansible all --list-hosts
+  203  ansible all --list-hosts
+  205  ansible all --list-hosts
+  206  ansible all -m gather_facts
+  220  ansible all -m pinh
+  221  ansible all -m ping
+  223  ansible all -m ping
+  225  ansible all -m apt -a update_cache=true --become --ask-become-pass
+  227  ansible all -m apt -a name=vim-nox --become --ask-become-pass
+  228  ansible all -m apt -a name=tmux --become --ask-become-pass
