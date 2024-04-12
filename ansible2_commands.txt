@@ -1,0 +1,9 @@
+  308  ansible-playbook --ask-become-pass install_apache.yml
+  310  ansible all -m gather-facts --limit cloudaddy@192.168.0.121 | grep a ansible_di
+stribution
+  311  ansible all -m gather-facts --limit cloudaddy@192.168.0.121 | grep ansible_dist
+ribution
+  312  ansible all -m gather-facts --limit cloudaddy@192.168.0.121
+  313  ansible all -m gather_facts --limit cloudaddy@192.168.0.121 | grep ansible_dist
+ribution
+

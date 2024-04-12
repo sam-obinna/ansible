@@ -1,11 +1,16 @@
 ---
-- hosts: debian
+- hosts: all
   become: true
   tasks:
+  - name: install apache2 package
+    apt:
+      name: apache2                  
+      when: ansible_distribution in ["Ubuntu", "Debian"]
 
   - name: install apache2 package
     apt:
       name: apache2
+      when: ansible_distribution == "Ubuntu"
 
 - hosts: redhat
   become: true
