@@ -1,0 +1,24 @@
+---
+- hosts: redhat_server,debian_server
+  become: true
+  tasks:
+  - name: Create New User
+    user:
+      name: cloudguardian
+      group: root
+    tags: always
+  
+  - name: Add SSH key for user cloudguardian
+    authorized_key:
+      user: cloudguardian
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAy5Y4wvLiLvzfPZYAhtR3YLObOMk3VTJzX3uV+Nu92G SSH key for this Vm"
+    tags: always
+
+  - name: Add Sudoers file for cloudguardian
+    tags: always
+    copy:
+      src: ~/ansible/sudo_cloudguardian
+      dest: /etc/sudoers.d/cloudguardian
+      owner: root
+      group: root
+      mode: 0440

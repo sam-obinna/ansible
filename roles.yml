@@ -1,0 +1,15 @@
+---
+- hosts: redhat_server,
+  become: true
+  roles: 
+    - redhat
+
+- hosts: debian_server
+  become: true
+  roles:
+    - debian
+
+- hosts: all
+  become: true
+  roles:
+    - copy_file

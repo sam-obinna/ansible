@@ -1,0 +1,4 @@
+- name: Updating the redhat server
+  tags: always
+  yum: 
+    update_cache: yes

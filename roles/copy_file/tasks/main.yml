@@ -1,0 +1,8 @@
+- name: Copyfile a playbook file to the servers
+  tags: always
+  copy: 
+    src: bootstrap.yml
+    dest: /home/cloudguardian
+    group: root
+    owner: root
+    mode: 0660
