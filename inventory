@@ -1,5 +1,9 @@
-[debian]
-cloudlord@192.168.0.158
+[Learn_Variables]
+cloudlord@192.168.0.158 apache_package=apache2 php_package=lipapache2-mod-php
+cloudaddy@192.168.0.121 apache_package=httpd php_package=php
 
-[redhat]
-cloudaddy@192.168.0.121
+[debian_server]
+cloudlord@192.168.119.15
+
+[redhat_server]
+cloudaddy@192.168.119.14

@@ -1,0 +1,15 @@
+---
+- hosts: redhat_server
+  become: true
+  pre_tasks:
+
+  - name: Update Index of the Fedora Server
+    yum:
+      update_cache: yes
+
+- hosts: debian_server
+  become: true
+  pre_tasks:
+  - name: Update the Index of the Debain Server
+    apt:
+      update_cache: yes

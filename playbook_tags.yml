@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Update Index of the Servers
+    tags: always  
+    yum:
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: Update Index of the Fedora Server
+    tags: always
+    apt:
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+
+- hosts: debian_server
+  become: true
+  tasks:
+  - name: Install Mariadb on the Debain Server
+    tags: db,debian,mariadb,maria
+    apt:
+      name: mariadb-server
+      state: latest
+
+- hosts: redhat_server
+  become: true
+  tasks:
+  - name: Install Mariadb on the ubuntu on the fedora server
+    tags: centos,centos,mariadb,maria
+    yum:
+      name: mariadb
+      state: latest
+
