@@ -1,0 +1,18 @@
+---
+- hosts: redhat_server
+  become: true
+  tasks:
+  - name: Editing the html file
+    lineinfile:
+      path: /var/www/html/index.html
+      regexp: ".for"
+      line: "<h1> Default Html Page currently hosted on CentOS server <h1>"
+    when: ansible_distribution == "CentOS"
+    register: http
+
+  - name: Starting up the apache on centos
+    service:
+      name: httpd
+      state: started
+    when: http.changed
+                               

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install Unzip
+    package:
+      name: unzip
+    
+  - name: Install Terraform
+    unarchive:
+      src: https://release.hashicorp.com/terraform/.........
+      dest: /usr/local/bin
+      remote_src: yes
+      owner: root'
+      group: root
+      mode: 0755
+      
+ 
