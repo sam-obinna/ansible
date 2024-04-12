@@ -1,0 +1,20 @@
+---
+- hosts: debian
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+
+- hosts: redhat
+  become: true
+  tasks:
+  - name: update index
+    yum:
+      update_cache: yes
+
+  - name: install apache 2
+    yum: 
+      name: httpd
+      state: latest
