@@ -1,0 +1,16 @@
+- name: Updating the apache server
+  tags: always
+  package:
+    name: "{{ apache_package }}"
+    state: latest
+  notify: up_apache
+
+- name: Generating sshd_config file using template
+  tags: always
+  template:
+    src: "{{ ssh_temp }}"
+    dest: /etc/ssh/sshd_config
+    owner: root'
+    group: root
+    mode: 0644
+  notify: restart_sshd

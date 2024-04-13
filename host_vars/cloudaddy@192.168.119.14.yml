@@ -1,0 +1,3 @@
+apache_package: httpd
+ssh_users: "cloudguardian cloudaddy"
+ssh_temp: centos_sshd.j2

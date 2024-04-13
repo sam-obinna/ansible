@@ -13,3 +13,8 @@
   become: true
   roles:
     - copy_file
+
+- hosts: all
+  become: true
+  roles:
+    - apache
